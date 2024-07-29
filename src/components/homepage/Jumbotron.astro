@@ -1,0 +1,42 @@
+---
+const bulletPoints = [
+  "Highly skilled at progressive enhancement, design systems & UI Engineering",
+  "Proven experience building successful products for clients across several countries",
+  " Highly skilled at progressive enhancement",
+];
+---
+
+<!-- Main part -->
+<div
+  class="w-[1200px] max-w=[calc(100%-60px)] mx-auto mt-12 flex justify-between"
+>
+  <!-- left -->
+  <div class="shrink-0 grow-1 p-8">
+    <h1 class="text-6xl text-slate-100">Callum Macpherson.</h1>
+    <div class="text-4xl text-slate-400 mt-2">Fullstack developer</div>
+
+    <p class="text-2xl mt-8">
+      I build pixel-perfect, engaging, and accessible digital experiences.
+    </p>
+
+    <p class="text-2xl text-slate-400 mt-8">Tailwind fanatic</p>
+
+    <ul class="flex mt-16 flex-col">
+      {
+        bulletPoints.map((x) => (
+          <li class="mt-2 content-[''] before:inline-block before:mr-2 before:w-[20px] before:h-[20px] before:bg-violet-900 before:rounded-full">
+            {x}
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+
+  <!-- right -->
+  <div class="pt-10 pr-10 pl-3 pb-3 shrink-0 grow-0">
+    <div class="relative">
+      <img src="/photo.jfif" alt="" class="w-[400px] h-auto z-20 relative" />
+      <div class="bg-slate-700 absolute -top-8 left-8 w-full h-full z-10"></div>
+    </div>
+  </div>
+</div>

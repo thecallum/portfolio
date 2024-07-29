@@ -1,0 +1,81 @@
+---
+interface IRole {
+  jobTitle: string;
+  company: string;
+  roleExperience: string[];
+  technologies: string[];
+}
+
+const roles: IRole[] = [
+  {
+    jobTitle: "Software engineer",
+    company: "London Borough of Hackney",
+    roleExperience: [
+      "Developed and maintained a complex housing management and repair system, reducing paperwork, enabling analytics and improving user  efficiency",
+      "Collaborated with a small team to migrate a legacy MS Access database to a Next.js application, enhancing data resilience and eliminating a single point of failure",
+      "Developed and integrated S3-based file upload and management functionality into the repairs system, removing the reliance on a Google Form simplifying processes and facilitating further system improvements",
+      "Consolidated a long-standing unreliable SOAP integration into a dependable and stable system",
+      "Led the development of a back-office system to automate developer tasks, allowing support staff to assume these tasks, resulting in substantial time savings for developers",
+      "Guided and mentored less experienced team members, fostering their growth and contributing to team success",
+    ],
+    technologies: [
+      ".NET",
+      "React",
+      "Next.js",
+      "AWS",
+      "Terraform",
+      "CircleCI",
+      "Postgres",
+      "Typescript",
+    ],
+  },
+  {
+    jobTitle: "Web developer",
+    company: "Colchester Borough Council",
+    roleExperience: [
+      "Developed an accessible and printable recycling calendar, eliminating £50,000 in yearly printing costs",
+      "Collaborated with a designer to overhaul the accessibility and user experience of an outdated council website, significantly enhancing usability and creating a more inclusive experience for residents",
+      "Leveraged the MS Dynamics SDK to develop an API, implementing enhancements and custom features to address limitations beyond the default capabilities",
+      "Integrated image upload and hosting with Azure Blob Storage, significantly reducing server load and reducing image loading speed on the website, enhancing overall user experience.",
+      "Transitioned the development environment from Gulp to Webpack, improving code sharing and reduced bundle sizes, increasing page loading performance",
+      "Conducted cross-browser testing using various tools to ensure compatibility across multiple browsers, including Internet Explorer 11, enabling a consistent user experience across all browsers",
+      "Enhanced the search experience with Algolia and leveraged analytics to identify and resolve UX issues",
+    ],
+    technologies: [
+      "JavaScript",
+      "HTML/SCSS",
+      "Vue.js",
+      "C#",
+      "Microsoft Dynamics",
+      "Azure",
+    ],
+  },
+];
+---
+
+<div class="w-[1200px] max-w=[calc(100%-60px)] mx-auto mt-12 px-12">
+  <h2 class="text-5xl mb-2 text-slate-100 mb-12">Experience</h2>
+  {
+    roles.map((role) => (
+      <div>
+        <h3 class="text-3xl text-slate-100 mb-2">
+          {role.jobTitle} . {role.company}
+        </h3>
+
+        <ul class="text-slate-400 flex flex-col list-disc pl-8 leading-7">
+          {role.roleExperience.map((x) => (
+            <li class="mb-2">{x}</li>
+          ))}
+        </ul>
+
+        <ul class="flex flex-wrap mt-4 mb-8 items-center">
+          {role.technologies.map((x) => (
+            <li class="text-md text-slate-300 bg-slate-950 px-3 py-1 rounded-2xl mr-2">
+              {x}
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))
+  }
+</div>
