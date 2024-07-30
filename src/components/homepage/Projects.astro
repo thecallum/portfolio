@@ -1,0 +1,74 @@
+---
+import Section from "../layout/Section.astro";
+
+interface IProject {
+  projectTitle: string;
+  liveUrl: string;
+  github: string;
+  technologies: string[];
+  keyTakeAways: string[];
+}
+
+const projects: IProject[] = [
+  {
+    projectTitle: "Time tracking app",
+    liveUrl: "https://timer-app.thecallum.com/",
+    github: "https://github.com/thecallum/timer_app_frontend",
+    technologies: [
+      "Next.js",
+      ".NET",
+      "Postgres",
+      "Entity Framework",
+      "Tailwind",
+      "AWS",
+      "Auth0",
+      "Playwright",
+    ],
+    keyTakeAways: [
+      "Architected and implemented a calendar-based time-tracking app, enabling users to effectively analyze and optimize their time management",
+      "Integrated Auth0 for seamless and secure user authentication",
+      "Established a robust CI/CD pipeline with CircleCI, facilitating automated, serverless deployments and enhancing development agility",
+      "Developed a comprehensive suite of integration tests with Playwright, ensuring high reliability and performance of the application",
+    ],
+  },
+];
+---
+
+<Section heading="Projects">
+  {
+    projects.map((project) => (
+      <div>
+        <div class="flex flex-row items-center justify-start">
+          <h3 class="text-3xl text-slate-100 mb-2">{project.projectTitle}</h3>
+
+          <a
+            href={project.liveUrl}
+            class="text-md text-slate-900 bg-slate-400 font-bold px-2 py-1 rounded-md ml-2"
+          >
+            Live Demo
+          </a>
+          <a
+            href={project.github}
+            class="text-md text-slate-900 bg-slate-400 font-bold px-3 py-1 rounded-md ml-2"
+          >
+            GitHub Repository
+          </a>
+        </div>
+
+        <ul class="text-slate-400 flex flex-col list-disc pl-8 leading-7">
+          {project.keyTakeAways.map((x) => (
+            <li class="mb-2">{x}</li>
+          ))}
+        </ul>
+
+        <ul class="flex flex-wrap mt-4 mb-8 items-center">
+          {project.technologies.map((x) => (
+            <li class="text-md text-slate-300 bg-slate-950 px-3 py-1 rounded-2xl mr-2">
+              {x}
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))
+  }
+</Section>

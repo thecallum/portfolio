@@ -1,4 +1,6 @@
 ---
+import Section from "../layout/Section.astro";
+
 interface IRole {
   jobTitle: string;
   company: string;
@@ -53,24 +55,23 @@ const roles: IRole[] = [
 ];
 ---
 
-<div class="w-[1200px] max-w=[calc(100%-60px)] mx-auto mt-12 px-12">
-  <h2 class="text-5xl mb-2 text-slate-100 mb-12">Experience</h2>
+<Section heading="Experience">
   {
     roles.map((role) => (
       <div>
-        <h3 class="text-3xl text-slate-100 mb-2">
+        <h3 class="text-3xl text-slate-100 mb-8">
           {role.jobTitle} . {role.company}
         </h3>
 
         <ul class="text-slate-400 flex flex-col list-disc pl-8 leading-7">
           {role.roleExperience.map((x) => (
-            <li class="mb-2">{x}</li>
+            <li class="mb-4">{x}</li>
           ))}
         </ul>
 
         <ul class="flex flex-wrap mt-4 mb-8 items-center">
           {role.technologies.map((x) => (
-            <li class="text-md text-slate-300 bg-slate-950 px-3 py-1 rounded-2xl mr-2">
+            <li class="text-md text-slate-300 bg-slate-950 px-3 py-1 rounded-2xl mr-2 mb-2">
               {x}
             </li>
           ))}
@@ -78,4 +79,4 @@ const roles: IRole[] = [
       </div>
     ))
   }
-</div>
+</Section>

@@ -1,0 +1,16 @@
+---
+interface Props {
+  heading: string;
+}
+---
+
+<div
+  class="w-[calc(100%)] max-w-[1400px] mx-auto  px-6 md:w-[calc(100%-30px)] mt-12 lg:mt-24 xl:mt-32"
+>
+  <h2 class="text-4xl mb-6 md:text-5xl md:mb-8  text-slate-100">{Astro.props.heading}</h2>
+
+  <div class="max-w-[1000px]">
+
+    <slot />
+  </div>
+</div>
