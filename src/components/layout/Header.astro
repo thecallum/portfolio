@@ -1,15 +1,39 @@
 ---
-const BLOG_URL = "https://blog.thecallum.com/";
+interface IHeaderLink {
+  name: string;
+  url: string;
+}
+
+const links: IHeaderLink[] = [
+  {
+    name: "GitHub",
+    url: "https://github.com/thecallum",
+  },
+  {
+    name: "LinkedIn",
+    url: "https://linkedin.com/in/callum-macpherson-0b086724b",
+  },
+  {
+    name: "Blog",
+    url: "https://blog.thecallum.com/",
+  },
+];
 ---
 
-<header class="">
-
-  <!-- w-[calc(100%)] max-w-[1400px] mx-auto mb-8 md:mb-16  px-6 mt-6 md:w-[calc(100%-30px)] -->
+<header>
   <div
     class="w-[100%] max-w-[1400px] mx-auto mt-4 lg:mt-8 md:w-[calc(100%-30px)] flex justify-between px-6"
   >
     <div class="text-slate-400">thecallum.com</div>
 
-    <div class="text-slate-400"><a href={BLOG_URL}>Blog</a></div>
+    <ul class="flex items-center justify-end">
+      {
+        links.map(({ name, url }) => (
+          <li class="text-slate-400 ml-6 cursor-pointer hover:text-slate-300 active:text-slate-300">
+            <a href={url}>{name}</a>
+          </li>
+        ))
+      }
+    </ul>
   </div>
 </header>
