@@ -1,5 +1,7 @@
 ---
+import BulletedList from "../BulletedList.astro";
 import Section from "../layout/Section.astro";
+import TechnologiesList from "../TechnologiesList.astro";
 
 interface IProject {
   projectTitle: string;
@@ -38,36 +40,32 @@ const projects: IProject[] = [
   {
     projects.map((project) => (
       <div>
-        <div class="flex flex-row items-center justify-start">
-          <h3 class="text-3xl text-slate-100 mb-2">{project.projectTitle}</h3>
+        <h3 class="text-xl text-slate-100">{project.projectTitle}</h3>
 
-          <a
-            href={project.liveUrl}
-            class="text-md text-slate-900 bg-slate-400 font-bold px-2 py-1 rounded-md ml-2"
-          >
-            Live Demo
-          </a>
-          <a
-            href={project.github}
-            class="text-md text-slate-900 bg-slate-400 font-bold px-3 py-1 rounded-md ml-2"
-          >
-            GitHub Repository
-          </a>
-        </div>
 
-        <ul class="text-slate-400 flex flex-col list-disc pl-8 leading-7">
-          {project.keyTakeAways.map((x) => (
-            <li class="mb-2">{x}</li>
-          ))}
+        <BulletedList 
+          items={project.keyTakeAways}
+        />
+        
+
+        <ul class="flex mb-2 leading-7 text-slate-300  text-sm text-slate-200 flex-row">
+          <li class="mt-2 text-md content-[''] lg:text-lg [&:not(:first-child)]:list-disc [&:not(:first-child)]:ml-8">
+            <a href={project.liveUrl} class="text-md">
+              [link icon] Live Demo
+            </a>
+          </li>
+
+          <li class="mt-2 text-md content-[''] lg:text-lg [&:not(:first-child)]:list-disc [&:not(:first-child)]:ml-8">
+            <a href={project.github} class="text-md">
+              GitHub Repository
+            </a>
+          </li>
         </ul>
 
-        <ul class="flex flex-wrap mt-4 mb-8 items-center">
-          {project.technologies.map((x) => (
-            <li class="text-md text-slate-300 bg-slate-950 px-3 py-1 rounded-2xl mr-2">
-              {x}
-            </li>
-          ))}
-        </ul>
+
+        <TechnologiesList 
+          technologies={project.technologies}
+        />
       </div>
     ))
   }

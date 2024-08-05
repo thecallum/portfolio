@@ -1,0 +1,9 @@
+---
+interface Props {
+  items: string[];
+}
+---
+
+<ul class="flex flex-col list-disc leading-7 pl-7 marker:text-slate-300">
+  {Astro.props.items.map((x) => <li class="mb-4">{x}</li>)}
+</ul>
