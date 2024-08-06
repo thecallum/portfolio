@@ -61,34 +61,36 @@ const roles: IRole[] = [
 ---
 
 <Section heading="Experience">
-  <div class="">
-    {
-      roles.map((role) => (
-        <div class="relative pl-8 lg:pl-44 mt-8 group">
-          <div
-            class="flex flex-col lg:flex-row items-start mb-1 group-last:before:hidden 
-            before:absolute before:left-2 lg:before:left-0  before:px-px before:bg-slate-300 
-            lg:before:ml-[9.5rem] before:h-[calc(100%+2rem)] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute 
-            after:left-2 lg:after:left-0 after:w-2 after:h-2 after:bg-emerald-600 after:border-4 after:box-content 
-            after:border-slate-900 after:rounded-full lg:after:ml-[9.5rem] after:-translate-x-1/2 after:translate-y-1.5"
-          >
-            <time class="lg:absolute  left-0 lg:left-auto lg:right-[calc(100%-8rem)] translate-y-0.5 inline-flex items-center justify-center text-sm 
-             h-6 mb-3 lg:mb-0 text-emerald-500 rounded-full whitespace-nowrap tracking-widest uppercase font-semibold
-              w-auto
-             ">
+  {
+    roles.map((role, i) => (
+      <div class="flex pb-6">
+        <div class="flex-shrink-0  relative lg:ml-32 ">
+          {/* Circle */}
+          <div class="w-6 h-6 rounded-full bg-emerald-500 z-10 relative border-slate-900 border-8 box-content" />
+
+          {/* Line */}
+          {i !== roles.length - 1 && (
+            <div class="absolute w-[2px] rounded-full h-[calc(100%+24px)] z-0 bg-slate-300 top-4 left-1/2 -translate-x-1/2 " />
+          )}
+        </div>
+        <div class="flex-grow pl-4">
+          <span class="bg-orange-4000 h-9 flex justify-start items-center mb-2 relative lg:absolute">
+            <time class="text-emerald-500 whitespace-nowrap tracking-widest uppercase font-semibold text-sm lg:absolute lg:right-[calc(100%+4rem)] ">
               {role.dateRange}
             </time>
-          </div>
+          </span>
 
-          <h3 class="text-xl text-slate-100 mb-4 font-semibold" >
-            {role.jobTitle} - {role.company}
-          </h3>
+          <span class="bg-orange-4000 h-9 flex justify-start items-center  relative  mb-4">
+            <h3 class="text-xl text-slate-100  font-semibold ">
+              {role.jobTitle} - {role.company}
+            </h3>
+          </span>
 
           <BulletedList items={role.roleExperience} paddingLeftClass="pl-2" />
 
           <TechnologiesList technologies={role.technologies} />
         </div>
-      ))
-    }
-  </div>
+      </div>
+    ))
+  }
 </Section>
