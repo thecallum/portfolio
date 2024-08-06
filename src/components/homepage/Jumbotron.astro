@@ -21,19 +21,19 @@ const bulletPoints = ["Tailwind fanatic", "CSS contortionist"];
         Fullstack developer
       </div>
 
-      <p class="text-md mt-8 lg:mt-16 lg:text-xl">
-        <!-- I build pixel-perfect, engaging, and accessible digital experiences. -->
+      <p class="text-md mt-8 lg:mt-12 lg:text-xl">
 
         I create dynamic, user-centric, and accessible web experiences supported
         by robust infrastructure that ensures a seamless user experience.
       </p>
 
-      <!-- list-disc -->
 
-      <ul class="flex mt-4 leading-7 text-slate-500 flex-row">
+      <ul class="inline-flex mt-8 lg:mt-12 px-4 py-2 leading-7 text-slate-900 flex-row bg-slate-400 rounded-xl items-center justify-center
+        
+      ">
         {
           bulletPoints.map((x) => (
-            <li class="mt-2 text-md content-[''] lg:text-lg [&:not(:first-child)]:list-disc [&:not(:first-child)]:ml-8">
+            <li class="text-md  content-[''] lg:text-lg [&:not(:first-child)]:list-disc [&:not(:first-child)]:ml-8">
               {x}
             </li>
           ))
@@ -42,7 +42,6 @@ const bulletPoints = ["Tailwind fanatic", "CSS contortionist"];
     </div>
   </div>
 
-  <!-- right -->
   <div
     class="flex items-center justify-center pt-4 pr-4 mt-8 sm:justify-end lg:w-1/3"
   >

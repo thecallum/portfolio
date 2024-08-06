@@ -12,6 +12,8 @@
   "dependencies": {
     "@astrojs/check": "^0.8.3",
     "@astrojs/tailwind": "^5.1.0",
+    "@fontsource-variable/open-sans": "^5.0.29",
+    "@fontsource-variable/roboto-mono": "^5.0.19",
     "@fontsource/ibm-plex-mono": "^5.0.13",
     "@fontsource/molengo": "^5.0.13",
     "@fontsource/twinkle-star": "^5.0.20",

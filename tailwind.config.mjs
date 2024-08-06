@@ -6,9 +6,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["'Molengo'", ...defaultTheme.fontFamily.sans],
-        heading: ['Varela Round'],
-        // heading: ["IBM Plex Mono"],
+        sans: ["Open Sans Variable", "sans-serif"],
+        heading: ["Roboto Mono Variable", "monospace"],
       },
     },
   },
