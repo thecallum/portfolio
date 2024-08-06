@@ -2,6 +2,7 @@
 import BulletedList from "../BulletedList.astro";
 import LinkIcon from "../icons/LinkIcon.astro";
 import Section from "../layout/Section.astro";
+import LinkWithIcon from "../LinkWithIcon.astro";
 import TechnologiesList from "../TechnologiesList.astro";
 
 interface IProject {
@@ -41,38 +42,23 @@ const projects: IProject[] = [
   {
     projects.map((project) => (
       <div>
-        <h3 class="text-xl text-slate-100 mb-4 font-semibold">{project.projectTitle}</h3>
+        <h3 class="text-xl text-slate-100 mb-4 font-semibold">
+          {project.projectTitle}
+        </h3>
 
-
-        <BulletedList 
-          items={project.keyTakeAways}
-        />
-        
+        <BulletedList items={project.keyTakeAways} />
 
         <ul class="flex mb-4 leading-7  text-sm text-slate-200 flex-row">
-          <li class="mt-2 text-md content-[''] lg:text-lg  [&:not(:first-child)]:ml-8">
-            <a href={project.liveUrl} class="text-sm flex items-center">
-              
-  
-
-              <LinkIcon />
-               <span class="ml-2">Live Demo</span>
-            </a>
+          <li class="mt-2 text-md content-[''] lg:text-lg">
+            <LinkWithIcon href={project.liveUrl}>Live Demo</LinkWithIcon>
           </li>
 
-          <li class="mt-2 text-md content-[''] lg:text-lg  [&:not(:first-child)]:ml-8">
-            <a href={project.github} class="text-sm flex items-center hover:text-lime-300">
-              <LinkIcon />
-             
-              <span class="ml-2">GitHub Repository</span>
-            </a>
+          <li class="mt-2 text-md content-[''] lg:text-lg ml-2">
+            <LinkWithIcon href={project.github}>GitHub Repository</LinkWithIcon>
           </li>
         </ul>
 
-
-        <TechnologiesList 
-          technologies={project.technologies}
-        />
+        <TechnologiesList technologies={project.technologies} />
       </div>
     ))
   }

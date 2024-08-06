@@ -8,7 +8,7 @@ const { paddingLeftClass = "pl-6" } = Astro.props;
 ---
 
 <ul
-  class=`flex flex-col list-disc leading-7 marker:text-slate-300 ${paddingLeftClass}`
+  class=`flex flex-col list-disc leading-7 marker:text-slate-300 mb-2 ${paddingLeftClass}`
 >
-  {Astro.props.items.map((x) => <li class="mb-4">{x}</li>)}
+  {Astro.props.items.map((x) => <li class="mb-2">{x}</li>)}
 </ul>

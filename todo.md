@@ -1,6 +1,6 @@
 # Todo list
 
-- Find link icon for Live demo and HithubRepository links
+<!-- - Find link icon for Live demo and GithubRepository links -->
 - Normalise spacing on mobile
 - Decide on accent colour (probably either lime or purple)
 - Get spacing working on other widths
