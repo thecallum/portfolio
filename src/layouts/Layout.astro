@@ -1,7 +1,7 @@
 ---
 import "@fontsource-variable/roboto-mono";
 import "@fontsource-variable/open-sans";
-import photo from "../images/photo.jpg"
+import photo from "../images/photo.jpg";
 
 import Header from "../components/layout/Header.astro";
 
@@ -21,11 +21,29 @@ const { title } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="preload" href={photo.src} as="image">
-  
+    <link rel="preload" href={photo.src} as="image" />
+
+    <link
+      rel="preload"
+      href="/fonts/open-sans.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <link
+      rel="preload"
+      href="/fonts/roboto-mono.woff2"
+      as="font"
+      type="font/roboto-mono"
+      crossorigin
+    />
+
     <title>{title}</title>
   </head>
-  <body class=" text-slate-400 font-sans  bg-gradient-to-tr from-slate-950 via-cyan-950 to-slate-950 selection:text-emerald-900 selection:bg-emerald-600">
+  <body
+    class="text-slate-400 font-sans bg-gradient-to-tr from-slate-950 via-cyan-950 to-slate-950 selection:text-emerald-900 selection:bg-emerald-600"
+  >
     <Header />
 
     <slot />
