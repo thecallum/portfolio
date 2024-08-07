@@ -22,14 +22,14 @@ const links: IHeaderLink[] = [
 
 <header>
   <div
-    class="w-[100%] max-w-[1400px] mx-auto mt-4 lg:mt-8 md:w-[calc(100%-30px)] flex justify-between px-6"
+    class="w-[100%] max-w-[1200px] mx-auto mt-4 lg:mt-8 md:w-[calc(100%-30px)] flex justify-between px-6"
   >
     <div class="text-slate-400">thecallum.com</div>
 
     <ul class="flex items-center justify-end">
       {
         links.map(({ name, url }) => (
-          <li class="text-slate-400 hover:text-emerald-400 active:text-emerald-400 focus:text-emerald-400 ml-6 cursor-pointer">
+          <li class="text-slate-300/90 text-sm hover:text-emerald-400 active:text-emerald-400 focus:text-emerald-400 ml-6 cursor-pointer">
             <a href={url}>{name}</a>
           </li>
         ))

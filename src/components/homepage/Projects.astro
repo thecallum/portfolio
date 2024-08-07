@@ -47,8 +47,9 @@ const projects: IProject[] = [
         </h3>
 
         <BulletedList items={project.keyTakeAways} />
+        <TechnologiesList technologies={project.technologies} />
 
-        <ul class="flex mb-4 leading-7  text-sm text-slate-200 flex-row">
+        <ul class="flex mb-4 lg:mb-6 leading-7  text-sm text-slate-300 flex-row">
           <li class="mt-2 text-md content-[''] lg:text-lg">
             <LinkWithIcon href={project.liveUrl}>Live Demo</LinkWithIcon>
           </li>
@@ -57,8 +58,6 @@ const projects: IProject[] = [
             <LinkWithIcon href={project.github}>GitHub Repository</LinkWithIcon>
           </li>
         </ul>
-
-        <TechnologiesList technologies={project.technologies} />
       </div>
     ))
   }
